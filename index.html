@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[A.I.R.] - Progetti</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&family=Space+Grotesk:wght@400;500;700&display=swap");
+
+    :root {
+      --bg-a: #030303;
+      --bg-b: #0d1016;
+      --bg-c: #121212;
+      --text: #f5f5f5;
+      --muted: #b9bec8;
+      --glass: rgba(255, 255, 255, 0.06);
+      --stroke: rgba(255, 255, 255, 0.18);
+      --accent-1: #44d2ff;
+      --accent-2: #00ffa3;
+      --shadow: rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Space Grotesk", sans-serif;
+      color: var(--text);
+      cursor: url("cursore.png") 16 16, auto;
+      background:
+        radial-gradient(circle at 10% 15%, rgba(68, 210, 255, 0.12), transparent 35%),
+        radial-gradient(circle at 85% 80%, rgba(0, 255, 163, 0.1), transparent 30%),
+        linear-gradient(145deg, var(--bg-a), var(--bg-b) 55%, var(--bg-c));
+      display: grid;
+      place-items: center;
+      padding: 40px 20px;
+    }
+
+    .menu-card,
+    .menu-card *,
+    a,
+    button {
+      cursor: url("cursore.png") 16 16, pointer;
+    }
+
+    .page {
+      width: min(1100px, 100%);
+    }
+
+    .title {
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin-bottom: 26px;
+      font-size: 0.98rem;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(240px, 1fr));
+      gap: 22px;
+      perspective: 1200px;
+    }
+
+    .menu-card {
+      background: linear-gradient(165deg, rgba(255, 255, 255, 0.09), var(--glass));
+      border: 1px solid var(--stroke);
+      border-radius: 20px;
+      padding: 14px;
+      box-shadow: 0 20px 40px -20px var(--shadow);
+      transform-style: preserve-3d;
+      transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .menu-card::before {
+      content: "";
+      position: absolute;
+      inset: -120% 25%;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.35), transparent);
+      transform: rotate(20deg);
+      transition: transform 450ms ease;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .menu-card:hover {
+      transform: rotateX(7deg) rotateY(-8deg) translateY(-6px) scale(1.015);
+      box-shadow: 0 28px 45px -22px rgba(0, 0, 0, 0.72);
+      border-color: rgba(68, 210, 255, 0.5);
+    }
+
+    .menu-card:hover::before {
+      transform: translateX(130%) rotate(20deg);
+    }
+
+    .menu-content {
+      position: relative;
+      z-index: 1;
+      transform: translateZ(30px);
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 9px;
+      border-radius: 999px;
+      margin-bottom: 11px;
+      background: rgba(68, 210, 255, 0.13);
+      border: 1px solid rgba(68, 210, 255, 0.4);
+      color: #ccefff;
+    }
+
+    .menu-title {
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 7px;
+    }
+
+    .menu-text {
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+      min-height: 78px;
+    }
+
+    .menu-image {
+      width: 100%;
+      height: 175px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      display: block;
+    }
+
+    .menu-card.poster-card .menu-image {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 7;
+      object-fit: contain;
+      object-position: center;
+      background: rgba(0, 0, 0, 0.45);
+      border-radius: 18px;
+      padding: 8px;
+    }
+
+    @media (max-width: 980px) {
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-card:hover {
+        transform: translateY(-4px) scale(1.01);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1 class="title"><strong>[A.I.R.]</strong></h1>
+    <p class="subtitle">progetti scolastici di automazione, robotica e informatica.</p>
+
+    <section class="menu-grid">
+      <article class="menu-card poster-card">
+        <div class="menu-content">
+          <span class="tag">Progetto 01</span>
+          <h2 class="menu-title">Mimica - Mano Robotica</h2>
+          <p class="menu-text">
+            Mano robotica con diverse funzioni di dimostrazione, come riproduzione della mano,
+              controllo manuale e demo mode.
+          </p>
+          <img class="menu-image" src="mimica.PNG" alt="Locandina progetto Mimica">
+        </div>
+      </article>
+
+      <article class="menu-card poster-card">
+        <div class="menu-content">
+          <span class="tag">Progetto 02</span>
+          <h2 class="menu-title">Water Life</h2>
+          <p class="menu-text">
+            Water Life. progetto al 90% costituito da materiali riciclati,
+              coltivazione completamente automatica di piante senza necessità di terreno.
+          </p>
+          <img class="menu-image" src="water-life.PNG" alt="Locandina progetto Water Life">
+        </div>
+      </article>
+
+      <article class="menu-card poster-card">
+        <div class="menu-content">
+          <span class="tag">Progetto 03</span>
+          <h2 class="menu-title">Ulisse</h2>
+          <p class="menu-text">
+            un braccio robotico in grado di riconoscere e differenziare i rifiuti
+          </p>
+          <img class="menu-image" src="ulisse.png" alt="Locandina progetto Ulisse">
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
