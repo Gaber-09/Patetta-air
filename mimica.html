@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[A.I.R.] - Mimica</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&family=Space+Grotesk:wght@400;500;700&display=swap");
+
+    :root {
+      --bg-a: #030303;
+      --bg-b: #0d1016;
+      --bg-c: #121212;
+      --text: #f5f5f5;
+      --muted: #c7ced8;
+      --card: rgba(255, 255, 255, 0.06);
+      --stroke: rgba(255, 255, 255, 0.16);
+      --accent: #44d2ff;
+      --shadow: rgba(0, 0, 0, 0.55);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Space Grotesk", sans-serif;
+      color: var(--text);
+      cursor: url("cursore.png") 16 16, auto;
+      background:
+        radial-gradient(circle at 8% 12%, rgba(68, 210, 255, 0.14), transparent 32%),
+        radial-gradient(circle at 88% 84%, rgba(0, 255, 163, 0.09), transparent 30%),
+        linear-gradient(145deg, var(--bg-a), var(--bg-b) 54%, var(--bg-c));
+      padding: 30px 16px 52px;
+    }
+
+    a {
+      cursor: url("cursore.png") 16 16, pointer;
+    }
+
+    .page {
+      width: min(960px, 100%);
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .title {
+      font-family: "Orbitron", sans-serif;
+      letter-spacing: 0.08em;
+      font-size: clamp(1.5rem, 4.2vw, 2.4rem);
+      font-weight: 800;
+    }
+
+    .back-link {
+      text-decoration: none;
+      color: #d9f5ff;
+      border: 1px solid rgba(68, 210, 255, 0.45);
+      background: rgba(68, 210, 255, 0.14);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .card {
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), var(--card));
+      border: 1px solid var(--stroke);
+      border-radius: 18px;
+      box-shadow: 0 22px 40px -26px var(--shadow);
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    h1, h2 {
+      font-family: "Orbitron", sans-serif;
+    }
+
+    h2 {
+      font-size: 1rem;
+      color: #d5f2ff;
+      letter-spacing: 0.03em;
+      margin-top: 2px;
+    }
+
+    p, li {
+      color: var(--muted);
+      line-height: 1.54;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      padding-left: 16px;
+      display: grid;
+      gap: 6px;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="topbar">
+      <h1 class="title"><strong>[A.I.R.]</strong> - MIMICA</h1>
+      <a class="back-link" href="index.html">Torna ai progetti</a>
+    </div>
+
+    <section class="card">
+      <h2>Introduzione</h2>
+      <p>
+        Il progetto MIMICA consiste nello sviluppo di una piattaforma meccatronica per il controllo di una mano robotica a servomotori,
+        con architettura basata su elaborazione software e attuazione tramite microcontrollore. L'obiettivo è realizzare una catena
+        completa acquisizione - elaborazione - comando, traducendo input dell'utente in setpoint di posizione per ciascun dito,
+        con particolare attenzione a calibrazione, ripetibilità e gestione dei limiti meccanici.
+      </p>
+      <p>
+        Il progetto è stato realizzato per consolidare competenze in robotica, controllo, comunicazione seriale e integrazione
+        hardware/software, creando una base riutilizzabile per applicazioni successive.
+      </p>
+      <p>
+        Il sistema prevede tre modalità operative: modalità camera per il comando tramite riconoscimento del gesto, modalità manuale
+        per controllo diretto e taratura, e modalità demo per l'esecuzione automatica di sequenze preimpostate a fini di test e
+        presentazione. In prospettiva, la piattaforma è estendibile verso applicazioni di teleoperazione e manipolazione remota,
+        interfacciamento con robot umanoidi e sviluppo di dispositivi assimilabili a protesi/ausili tramite sensori e algoritmi
+        di controllo più avanzati.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Sviluppo</h2>
+      <p>
+        Mimica nasce con l'obiettivo di sperimentare una soluzione il più possibile vicina al settore della robotica applicata
+        alla medicina. L'idea iniziale era quella di realizzare una protesi robotica, ma a causa di limiti legati al budget,
+        alla complessità progettuale e alle tempistiche di ricerca, non è stato possibile sviluppare un sistema protesico completo.
+      </p>
+      <p>
+        Da questa difficoltà è nata un'evoluzione importante del progetto: invece di abbandonare l'idea iniziale, è stata sviluppata
+        una piattaforma sperimentale avanzata capace di integrare robotica, visione artificiale, interfacce grafiche intelligenti
+        e controllo elettronico. Mimica è così diventato un prototipo funzionale, pensato come base concreta per sviluppi futuri.
+      </p>
+      <p>
+        Il progetto ha permesso di approfondire diversi ambiti tecnologici: programmazione software, comunicazione tra dispositivi,
+        gestione di attuatori, progettazione meccanica e utilizzo della stampa 3D.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Funzionamento del Sistema</h2>
+      <p>
+        Il funzionamento di Mimica si basa sull'acquisizione in tempo reale dei movimenti della mano tramite videocamera.
+        Il software, eseguito sul Raspberry Pi, analizza la posizione delle dita (da 0 a 255 posizioni) e traduce tali informazioni
+        in una stringa di valori digitali (esempio: <code>$255255000000127</code>). Questi valori vengono trasmessi all'Arduino,
+        che controlla i servomotori e riproduce il movimento sulla mano robotica.
+      </p>
+      <p>
+        In questo modo si crea una corrispondenza diretta tra gesto umano e risposta meccanica, rendendo il prototipo una
+        dimostrazione pratica di controllo visivo applicato alla robotica.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Modalità Operative</h2>
+      <p>
+        Per rendere il progetto più completo e versatile, è stata sviluppata una smart GUI accessibile dal display integrato,
+        attraverso la quale è possibile selezionare diverse modalità di utilizzo.
+      </p>
+      <ul>
+        <li>La modalità Camera rappresenta la funzione principale: la mano robotica replica in tempo reale i movimenti rilevati dalla videocamera.</li>
+        <li>Toccando "Camera Mode" viene eseguita la finestra con visione semplificata del riconoscimento e pulsante di ritorno alla home.</li>
+        <li>La modalità Demo mostra automaticamente il funzionamento del sistema durante presentazioni e dimostrazioni pubbliche.</li>
+        <li>Toccando "Demo mode" si avvia un video dimostrativo guidato da assistente vocale.</li>
+        <li>La modalità Manuale permette di comandare singolarmente i movimenti per test, calibrazione e verifica meccanica/elettronica.</li>
+        <li>Toccando "Manual mode" si accede al controllo manuale: la mano si apre e si chiude selezionando il dito interessato; la posizione si resetta tornando alla home.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Linguaggi Utilizzati</h2>
+      <ul>
+        <li>Python, per la gestione dell'interfaccia grafica, della visione artificiale e della logica generale del sistema sul Raspberry Pi.</li>
+        <li>C++ per Arduino, per il controllo dei servomotori e la ricezione dei dati inviati dal Raspberry Pi.</li>
+      </ul>
+
+      <h2>Librerie e Strumenti Software</h2>
+      <ul>
+        <li>OpenCV (cv2) per acquisizione ed elaborazione immagini da videocamera.</li>
+        <li>cvzone per rilevamento e tracciamento della mano in modo semplificato.</li>
+        <li>Tkinter per la realizzazione della smart GUI.</li>
+        <li>PIL / ImageTk per la gestione delle immagini nell'interfaccia.</li>
+        <li>Serial per lo scambio dati tra Raspberry Pi e Arduino.</li>
+      </ul>
+      <p>
+        Nell'Arduino non è stata utilizzata alcuna libreria specifica dedicata.
+      </p>
+
+      <h2>Architettura Software</h2>
+      <ul>
+        <li>Sul Raspberry Pi: acquisizione video, rilevamento mano, elaborazione dita, conversione in comandi numerici, invio dati ad Arduino, gestione GUI e modalità operative.</li>
+        <li>Sull'Arduino: ricezione dati seriali, interpretazione valori, controllo servomotori, movimento fisico delle dita della mano robotica.</li>
+      </ul>
+      <p>
+        Questa suddivisione separa la parte di elaborazione intelligente dalla parte di attuazione meccanica, rendendo il sistema più stabile,
+        ordinato e facilmente espandibile.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Interazione Uomo-Macchina e Specifiche Tecniche</h2>
+      <p>
+        Un aspetto centrale dello sviluppo è stato lo studio dell'interazione uomo-macchina. Attraverso videocamera e riconoscimento dei
+        movimenti della mano, il sistema interpreta l'azione dell'utente e la converte in movimento reale della mano robotica.
+      </p>
+      <p>
+        Il progetto è composto da una parte hardware, una parte software e una parte meccanica progettate per lavorare in modo integrato.
+      </p>
+      <ul>
+        <li>Raspberry Pi 5 come unità principale di elaborazione.</li>
+        <li>Arduino Uno R4 per il controllo dei servomotori.</li>
+        <li>Display LCD touch da 7" per l'interfaccia grafica.</li>
+        <li>Webcam/videocamera per il rilevamento dei movimenti della mano.</li>
+        <li>Driver PCA9685, servomotori, alimentatore dedicato, cavo USB-C, jumper e cablaggi.</li>
+        <li>Struttura stampata in 3D per supporto meccanico e assemblaggio componenti.</li>
+      </ul>
+
+      <h2>Meccanica</h2>
+      <p>
+        Una parte della mano e del supporto è stata progettata tramite Shapr3D, poi realizzata con stampa 3D usando filamento riciclato;
+        alcune parti sono state rivestite in tessuto. Per alcune componenti più complesse sono stati usati elementi open source.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Obiettivi Raggiunti</h2>
+      <ul>
+        <li>Integrazione tra hardware e software.</li>
+        <li>Sviluppo di un sistema di controllo visivo funzionante.</li>
+        <li>Realizzazione di un'interfaccia grafica dedicata.</li>
+        <li>Utilizzo della comunicazione seriale tra due unità di controllo.</li>
+        <li>Progettazione e stampa 3D di una struttura personalizzata.</li>
+        <li>Acquisizione di competenze trasversali in robotica, programmazione ed elettronica.</li>
+      </ul>
+
+      <h2>Possibili Sviluppi Futuri</h2>
+      <ul>
+        <li>Una mano robotica più precisa e fluida.</li>
+        <li>Una vera protesi sperimentale.</li>
+        <li>Sistemi di telecontrollo di robot antropomorfi.</li>
+        <li>Applicazioni in ambito assistivo e riabilitativo.</li>
+      </ul>
+
+      <p>
+        In conclusione, Mimica non è soltanto un prototipo dimostrativo, ma un progetto tecnico e formativo che unisce innovazione,
+        sperimentazione e applicazione pratica, orientato a futuri sviluppi tra medicina, robotica e tecnologie intelligenti.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Autori</h2>
+      <p>Gabriele La Paglia</p>
+      <p>Pier Ghisolfo</p>
+      <p>Giacomo Sechi</p>
+      <p>Tutor: Gaetano Alibert</p>
+    </section>
+  </main>
+</body>
+</html>
