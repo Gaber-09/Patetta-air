@@ -86,6 +86,15 @@
       isolation: isolate;
     }
 
+    .card-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      border-radius: 20px;
+      text-indent: -9999px;
+      overflow: hidden;
+    }
+
     .menu-card::before {
       content: "";
       position: absolute;
@@ -183,10 +192,11 @@
           <h2 class="menu-title">Mimica - Mano Robotica</h2>
           <p class="menu-text">
             Mano robotica con diverse funzioni di dimostrazione, come riproduzione della mano,
-              controllo manuale e demo mode.
+              controllo manuale e demo mode. Clicca sulla copertina per aprire la pagina completa.
           </p>
           <img class="menu-image" src="mimica.PNG" alt="Locandina progetto Mimica">
         </div>
+        <a class="card-overlay" href="mimica.html">Apri progetto Mimica</a>
       </article>
 
       <article class="menu-card poster-card">
